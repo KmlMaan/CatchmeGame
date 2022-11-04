@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body
+{
+    margin:0px;
+}
+#box
+{
+    position:absolute;
+    height:20vh;
+    width:20vh;
+    background-color: orangered;
+    font-size:2vh;
+    padding:5px;
+    text-align:center;
+    box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+    <div id="box">
+        <h1>Catch me if you can!</h1>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+<script>
+var box = document.getElementById('box');
+box.style.top = Math.floor(Math.random() * 50).toString() + "px";
+box.style.left = Math.floor(Math.random() * 50).toString() + "px";
+
+box.addEventListener('mousemove', function ()
+{
+    let viewport_width=window.innerWidth;
+    let viewport_height=window.innerHeight;
+
+    let box_height=box.clientHeight;
+    let box_width=box.clientWidth;
+
+    box.style.top = Math.floor(Math.random() * (viewport_height-box_height)).toString() + "px";
+    box.style.left = Math.floor(Math.random() * (viewport_width-box_width)).toString() + "px";
+})
+</script>
+</body>
+
+</html>
